@@ -1,0 +1,33 @@
+{
+  "name": "socket.io-session-middleware",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/peerigon/socket.io-session-middleware.git"
+  },
+  "keywords": [
+    "socket.io",
+    "connect",
+    "express",
+    "session",
+    "http"
+  ],
+  "author": "peerigon <developers@peerigon.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peerigon/socket.io-session-middleware/issues"
+  },
+  "homepage": "https://github.com/peerigon/socket.io-session-middleware",
+  "devDependencies": {
+    "connect": "^2.19.5",
+    "socket.io": "^1.0.4"
+  }
+}
