@@ -15,23 +15,31 @@ var session = {
     cookieParser: connect.cookieParser("secret")
 };
 
-app.use(connect.json());
-app.use(session.cookieParser);
-app.use(connect.session(session));
-app.use(connect.static(__dirname));
-
 io = require("socket.io")(server);
 
+//configure connect session
+app.use(session.cookieParser);
+app.use(connect.session(session));
+
+//configure socket session
 io.use(socketSession(session));
+
+//static server to serve the client
+app.use(connect.static(__dirname));
 
 io.on("connection", function(socket){
 
-    socket.on("msg", function(msg, callback){
-        socket.session.msg = msg;
+    socket.on("whoAreYou", function(callback){
 
-        console.log("msg received and saved", socket.session);
-        callback(socket.session);
+        //read from session
+        callback(socket.session.name);
     });
+
+    socket.on("setName", function(data) {
+
+        //write to session
+        socket.session.name = data.name;
+    })
 });
 
 server.listen(3000);
