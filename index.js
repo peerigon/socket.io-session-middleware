@@ -35,7 +35,8 @@ function ioSession(options) {
                 return;
             }
 
-            sessionStore.load(findCookie(socketHandshake), function (storeErr, session) {
+            // use sessionStore.get() instead of deprecated sessionStore.load()
+            sessionStore.get(findCookie(socketHandshake), function (storeErr, session) {
                 if(storeErr) {
                     callback(storeErr);
                     return;
