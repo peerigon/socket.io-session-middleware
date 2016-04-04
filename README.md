@@ -1,10 +1,8 @@
 ## socket.io-session-middleware
-------------------------------------------------------------------------
 
-Share connect/express sessions with socket.io 1+
+Share connect/express sessions with socket.io 1.x
 
 ## Setup
-------------------------------------------------------------------------
 
 [![npm status](https://nodei.co/npm/socket.io-session-middleware.png?downloads=true&stars=true)](https://npmjs.org/package/socket.io-session-middleware)
 
@@ -12,7 +10,6 @@ Share connect/express sessions with socket.io 1+
 
 
 ## Example
-------------------------------------------------------------------------
 
 __Server__
 
