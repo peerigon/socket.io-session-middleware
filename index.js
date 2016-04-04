@@ -17,7 +17,6 @@
  * @returns {Function} handleSession
  */
 function ioSession(options) {
-
     var cookieParser = options.cookieParser,
         sessionStore = options.store,
         key = options.key || "connect.sid";
@@ -43,7 +42,8 @@ function ioSession(options) {
                 }
 
                 if(!session) {
-                    callback(new Error("could not look up session by key: " + key))
+                    callback(new Error("could not look up session by key: " + key));
+                    return;
                 }
                 callback(null, session);
             });
@@ -51,7 +51,6 @@ function ioSession(options) {
     }
 
     return function handleSession(socket, next) {
-
         getSession(socket.request, function (err, session) {
             if(err) {
                 next(err);

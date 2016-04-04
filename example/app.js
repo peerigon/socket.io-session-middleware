@@ -30,7 +30,6 @@ app.use(connect.static(__dirname));
 io.on("connection", function(socket){
 
     socket.on("whoAreYou", function(callback){
-
         //read from session
         callback(socket.session.name);
     });
